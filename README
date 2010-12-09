@@ -1,0 +1,25 @@
+This little library has one purpose: displaying progress on the
+terminal. Yes, you can display any kind of progress you want.
+Old folks, young folks, even your dog! If you need to display
+progress, this will cure all of your woes. It even has an ETA
+calculation built in.
+
+Usage is loosely documented in example.c. This was developed for
+Linux, but it may work on Windows (NOT tested). Ascii bar is
+pretty stable, but if it suddely flips a random bit on your drive
+(a la M-x butterfly) just remember that no software is perfect,
+and that you were warned.
+
+Here's a very simple example of how easy this is to use, assuming
+you don't want any bells or whistles.
+
+struct ascii_bar_params params;
+init_ascii_bar(&params, $MIN, $MAX, $STEP);
+
+while(do_work)
+{
+    ...
+    set_ascii_bar(&params, $VALUE);
+}
+
+printf("\n");
